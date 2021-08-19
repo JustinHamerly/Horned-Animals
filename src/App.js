@@ -29,13 +29,14 @@ class App extends Component {
     this.setState({title: beastData.title});
     this.setState({image_url: beastData.image_url});
     this.setState({keyword: beastData.keyword});
+    console.log(beastData);
   }
 
   render(){
     return (
       <div className="App">
         <Header />
-        <Main renderOnClick={this.renderOnClickHandle} />
+        <Main onImageClick={this.renderOnClickHandle} />
         <Footer />
         <SelectedBeast show={this.state.showModal} onClose={this.closeModal} title={this.state.title} description={this.state.description} image_url={this.state.image_url} keyword={this.state.keyword} />
       </div>

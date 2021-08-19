@@ -13,8 +13,6 @@ class SelectedBeast extends Component {
             <img src={this.props.image_url} alt={this.props.keyword}></img>
             <p>{this.props.description}</p>
           </Modal.Body>
-          <Modal.Footer>
-          </Modal.Footer>
         </Modal>
       </>
     );
