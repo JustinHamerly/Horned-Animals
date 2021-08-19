@@ -1,20 +1,25 @@
 import beasts from './data.json';
 import HornedBeast from './HornedBeast';
+import { Component } from 'react';
+import SelectedBeast from './selectedBeast';
 
-function Main() {
+class Main extends Component {
 
-  const beastArray = beasts.map(beast => {
-    return <HornedBeast image_url={beast.image_url} title={beast.title} description={beast.description} keyword={beast.keyword} horns={beast.horns} />;
-  });
-  console.log(beastArray);
+  render(){
+    const beastArray = beasts.map(beast => {
+      return <HornedBeast onImgClick={this.props.renderOnClick} image_url={beast.image_url} title={beast.title} description={beast.description} keyword={beast.keyword} horns={beast.horns} />;
+    });
 
-  shuffle(beastArray);
+    shuffle(beastArray);
 
-  return (
-    <div id="beasts">
-      {beastArray}
-    </div>
-  );
+    return (
+      <div id="beasts">
+        {beastArray};
+        <SelectedBeast />;
+      </div>
+    );
+  }
+
 }
 
 function shuffle(array) {
