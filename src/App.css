@@ -23,10 +23,6 @@
   border-radius: 5px;
 }
 
-.articletop img {
-  width: 100%;
-}
-
 button.accordion-button {
   background-color: seashell;
 }
@@ -42,13 +38,13 @@ button.accordion-button {
   display:flex;
   flex-direction: column;
   align-items: bottom;
-  justify-content: flex-end;
+  justify-content: center;
   height: 100%;
 }
 
 .heart{
-  height:auto;
-  width:auto;
+  height: 64px;
+  width: 64px;
   margin: 5px;
 }
 

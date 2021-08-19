@@ -4,8 +4,8 @@ import heart from './assets/heart.png';
 
 class HornedBeast extends Component {
 
-  constructor() {
-    super(constructor);
+  constructor(props) {
+    super(props);
     this.state = {
       'votes': 0,
     };
@@ -23,19 +23,18 @@ class HornedBeast extends Component {
       <article class='beastarticle'>
         <div class="articletop">
           <Accordion>
-            <Accordion.Item eventKey="0">
+            <Accordion.Item eventKey={this.props.keyword}>
               <Accordion.Header>{this.props.title}</Accordion.Header>
               <Accordion.Body>
-                <p>{this.props.description}</p>
                 <p>Horns: {this.props.horns}</p>
+                <p><img class="heart" src={heart} alt="heart" /> {this.state.votes}</p>
+                <button class="votebutton" onClick={this.handleVoteClick}>Vote For Me!</button>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <img onClick={() => this.props.onImageClick(this.props)} src={this.props.image_url} alt={this.props.keyword}></img>
         </div>
         <div class='articlebottom'>
-          <p><img class="heart" src={heart} alt="heart" /> {this.state.votes}</p>
-          <button class="votebutton" onClick={this.handleVoteClick}>Vote For Me!</button>
+          <img onClick={() => this.props.onImageClick({title: this.props.title, keyword: this.props.keyword, description: this.props.description, horns: this.props.horns, image_url: this.props.image_url})} src={this.props.image_url} alt={this.props.keyword}></img>
         </div>
       </article>
     );
