@@ -12,6 +12,10 @@ class App extends Component {
     super(props);
     this.state = {
       showModal: false,
+      title: '',
+      description: '',
+      image_url: '',
+      keyword: '',
     };
   }
 
@@ -19,9 +23,12 @@ class App extends Component {
     this.setState({showModal: false});
   }
 
-  renderOnClickHandle = () => {
+  renderOnClickHandle = (beastData) => {
     this.setState({showModal: true});
-    // this.props.passBeastInfo({this.props.title}, {this.props.description}, {this.props.image_url}, {this.props.keyword});
+    this.setState({description: beastData.description});
+    this.setState({title: beastData.title});
+    this.setState({image_url: beastData.image_url});
+    this.setState({keyword: beastData.keyword});
   }
 
   render(){
@@ -30,7 +37,7 @@ class App extends Component {
         <Header />
         <Main renderOnClick={this.renderOnClickHandle} />
         <Footer />
-        <SelectedBeast show={this.state.showModal} onClose={this.closeModal} />
+        <SelectedBeast show={this.state.showModal} onClose={this.closeModal} title={this.state.title} description={this.state.description} image_url={this.state.image_url} keyword={this.state.keyword} />
       </div>
     );
   }

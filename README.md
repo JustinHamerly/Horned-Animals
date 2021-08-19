@@ -9,7 +9,8 @@
 
 - Classmates: Haustin Kimbrough, Sarah Creager
 - Fisher Yates Shuffle Algorithm
-- 
+- [passing parameters through onClick](https://upmostly.com/tutorials/pass-a-parameter-through-onclick-in-react)
+
 ---
 
 ## Time Estimates
@@ -34,9 +35,13 @@
 
 ---
 
->### Feature 3: 
+>### Feature 3: CSS styling
+
+---
+
+>### Feature 4: Display a Modal
 >
->- Estimate of time needed to complete: 
->- Start time: 
->- Finish time: 
->- Actual time needed to complete: 
+>- Estimate of time needed to complete: 2 hours
+>- Start time: 4:45 / 9:05
+>- Finish time: 7:00 / 11:30
+>- Actual time needed to complete: 4 hours 40 minutes

@@ -31,7 +31,7 @@ class HornedBeast extends Component {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <img onClick={this.props.onImageClick} src={this.props.image_url} alt={this.props.keyword}></img>
+          <img onClick={() => this.props.onImageClick(this.props)} src={this.props.image_url} alt={this.props.keyword}></img>
         </div>
         <div class='articlebottom'>
           <p><img class="heart" src={heart} alt="heart" /> {this.state.votes}</p>
