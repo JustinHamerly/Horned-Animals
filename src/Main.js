@@ -15,16 +15,10 @@ class Main extends Component {
     };
   }
 
-  handleChange = (e) => {
-    console.log(e);
-    const selection = e.target.value;
-    if (selection === '1'){
-      this.setState({beasts: shuffleBeasts.filter(beast => beast.horns === 1)});
-    }else if (selection === '2'){
-      this.setState({beasts: shuffleBeasts.filter(beast => beast.horns === 2)});
-    }else if (selection === '3'){
-      this.setState({beasts: shuffleBeasts.filter(beast => beast.horns === 3)});
-    }else if (selection === 'alot'){
+  handleChange = (horns) => {
+    if (horns === '1' || horns === '2' || horns === '3'){
+      this.setState({beasts: shuffleBeasts.filter(beast => beast.horns === parseInt(horns))});
+    }else if (horns === 'alot'){
       this.setState({beasts: shuffleBeasts.filter(beast => beast.horns >= 4)});
     }else{
       this.setState({beasts: shuffleBeasts});
@@ -38,9 +32,9 @@ class Main extends Component {
 
     return (
       <>
-        <FilterForm handleChange={this.handleChange}/>
+        <FilterForm handleSelection={this.handleChange}/>
         <div id="beasts">
-          {beastArray};
+          {beastArray}
         </div>
       </>
     );
